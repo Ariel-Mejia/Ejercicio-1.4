@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Convertidor="clr-namespace:Tarea4.Converters"
+             x:Class="Tarea4.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:Imagen x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout BackgroundColor="#f3eae8">
+        <ScrollView>
+
+
+
+            <StackLayout Orientation="Vertical" BackgroundColor="#f3eae8">
+                <Frame BackgroundColor="#f3eae8" Padding="0" CornerRadius="0">
+                    <Label Text="Tarea 1.4" HorizontalTextAlignment="Center" TextColor="Black" FontSize="33"/>
+                </Frame>
+                <Image x:Name="img"  HeightRequest="250" WidthRequest="100" BackgroundColor="#EFC966" Margin="20,0,20,0" Source="{Binding imagen, Converter={StaticResource ByteToImage}}"/>
+                <Label Text="Nombre" FontSize="25" Padding="30,10,30,0" TextColor="Black"/>
+                <Entry x:Name="txtnombre" Margin="30,0,30,0" FontSize="Subtitle" Text="{Binding nombres}" BackgroundColor="#2093d8" />
+                <Label Text="Descripcion" FontSize="25" Padding="30,10,30,0" TextColor="Black"/>
+                <Entry x:Name="txtdescripcion" Margin="30,0,30,0" FontSize="Subtitle" Text="{Binding descripcion}" BackgroundColor="#2093d8"/>
+
+                <Button Text="Tomar Foto" x:Name="btnFoto" Clicked="btnFoto_Clicked" TextColor="Black" BackgroundColor="#EFC966" Margin="0,10,30,10" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
+
+                <Button Text="a SQlite" x:Name="btnSQlite" Clicked="btnSQlite_Clicked" TextColor="Black" BackgroundColor="#EFC966"  Margin="0,10,30,0" WidthRequest="100" HorizontalOptions="Center" />
+            </StackLayout>
+
+
+        </ScrollView>
+
+
+    </StackLayout>
+
+</ContentPage>
